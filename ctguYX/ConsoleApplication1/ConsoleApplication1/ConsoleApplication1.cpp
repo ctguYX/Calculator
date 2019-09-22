@@ -16,13 +16,59 @@ Calculator::Calculator() {}
 string Calculator::MakeFormula() {
 	string formula = "";
 	srand((unsigned int)time(NULL));
-	int count = random(1, 3);
+	int count = random(2, 3);
 	int start = 0;
 	int number1 = random(1, 100);
 	formula += to_string(number1);
-	while (start <= count) {
+	int first;
+	first = number1;
+	while (start < count) {
 		int operation = random(0, 3);
 		int number2 = random(1, 100);
+
+		if (operation == 1 || operation == 2) {
+			first = number2;
+		}
+		else if(operation==3){
+			cout << "first=" << first << "number2= " << number2 << endl;
+			bool flag = true;
+			if (first%number2 == 0) {
+				first = first / number2;
+				flag = false;
+			}
+			while (flag) {
+				//除了之后有小数重新生成
+
+				//方法一：只重新生成数字 （有的情况循环次数会比较多）
+				number2 = random(1, 100);
+				if (first%number2 == 0) {
+					first = first / number2;
+					flag = false;
+				}
+				cout << "first=" << first << "number2= " << number2 << endl;
+
+				//方法二：运算符也重新生成
+				/* 
+				operation = random(0, 3);
+				number2 = random(1, 100);
+				if (operation == 0 || operation == 1) {
+					first = number2;
+					flag = false;
+				}
+				else if (operation == 2) {
+					first = first*number2;
+					flag = false;
+				}
+				else {
+					if (first%number2 == 0) {
+						flag = false;
+					}
+				}*/
+			}
+		}
+		else {
+			first = first*number2;
+		}
 		formula += op[operation] + to_string(number2);
 		start++;
 	}
