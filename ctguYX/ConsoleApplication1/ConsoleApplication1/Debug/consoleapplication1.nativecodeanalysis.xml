@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DEFECTS><DEFECT><SFA><FILEPATH>c:\users\asus 3\desktop\git\calculator\ctguyx\consoleapplication1\consoleapplication1\</FILEPATH><FILENAME>consoleapplication1.cpp</FILENAME><LINE>156</LINE><COLUMN>8</COLUMN></SFA><DEFECTCODE>6031</DEFECTCODE><DESCRIPTION>返回值被忽略: “getchar”。</DESCRIPTION><FUNCTION>main</FUNCTION><DECORATED>main</DECORATED><FUNCLINE>149</FUNCLINE><PATH/></DEFECT></DEFECTS>

@@ -6,11 +6,8 @@
 #include <ctime>
 #include <string>
 #include "Calculator.h"
-
 #define random(a,b) (rand()%(b-a+1)+a)
-
 using namespace std;
-
 Calculator::Calculator() {}
 
 string Calculator::MakeFormula() {
@@ -30,7 +27,7 @@ string Calculator::MakeFormula() {
 			first = number2;
 		}
 		else if(operation==3){
-			cout << "first=" << first << "number2= " << number2 << endl;
+	//		cout << "first=" << first << "number2= " << number2 << endl;
 			bool flag = true;
 			if (first%number2 == 0) {
 				first = first / number2;
@@ -45,7 +42,7 @@ string Calculator::MakeFormula() {
 					first = first / number2;
 					flag = false;
 				}
-				cout << "first=" << first << "number2= " << number2 << endl;
+			//	cout << "first=" << first << "number2= " << number2 << endl;
 
 				//方法二：运算符也重新生成
 				/* 
@@ -89,7 +86,7 @@ string Calculator::Solve(string formula) {
 			}
 			else {
 				if (k < j) {
-					tempStack->push_back(formula.substr(k, j + 1));
+					tempStack->push_back(formula.substr(k, j - 1 -k));
 				}
 				if (operatorStack->empty()) {
 					operatorStack->push(formulaChar);
